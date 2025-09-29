@@ -1,50 +1,103 @@
-# Welcome to your Expo app 👋
+# ⛰️ Rock App Mobile
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+An interactive React Native educational app that helps users explore and identify common rock types— optimized for mobile devices. 
+Designed for amateur geologists, hikers, students, and curious minds, RockApp Mobile makes geology accessible, engaging, and tactile.
 
-## Get started
+---
 
-1. Install dependencies
+## 🌍 Project Vision
 
-   ```bash
-   npm install
-   ```
+**RockApp Mobile** empowers users to explore and identify rocks through a visually immersive, touch-friendly interface. Built with accessibility and scientific clarity in mind, it blends intuitive navigation, interactive filtering, and personalized collection tools to foster curiosity about geology and natural history—anytime, anywhere.
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 🚀 Features
 
-In the output, you'll find options to open the app in a
+- 🔍 **Search & Filter**  
+  Browse rocks by name, type (igneous, sedimentary, metamorphic), texture, color, and origin using a mobile-optimized interface.
+- 🪨 **Rock Gallery**  
+  Explore a scrollable collection of rock cards with detailed info and fun facts. Tap any card to view deeper insights.
+- 📘 **Rock Detail Modal**  
+  View high-resolution images, geological context, and identification tips in a dedicated screen—designed for clarity and offline usability.
+- ➕ **Collection Manager**  
+  Save, tag, and annotate rocks in your personal collection. Perfect for field notes, study references, or hiking logs.
+- 🧠 **Quiz Mode**  
+  Test your knowledge with a “Rock Quiz” game. Great for learners and enthusiasts alike, now with touch-based interactions.
+- 🧭 **Mobile Navigation**  
+  Smooth routing between Home, Gallery, Collection, Quiz, and Settings—using Expo Router and React Navigation.
+- 💾 **Offline Support** *(coming soon)*  
+  Persist your collection across sessions for offline use and long-term tracking.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🧪 Technologies Used
 
-## Get a fresh project
+- **React Native** (via Expo)
+- **JavaScript/Typescript**
+- **Expo Router** 
+- **React Navigation** 
+- **StyleSheet API** 
+- **JSON** (rock and quiz data source)
+- **AsyncStorage** (planned for local persistence)
 
-When you're ready, run:
+---
 
+## 📁 Project Structure
 ```bash
-npm run reset-project
+RockAppMobile/
+├── assets/
+│   └── images/
+├── app/
+│   ├── (tabs)/
+│   │   ├── index.tsx
+│   │   ├── gallery.tsx
+│   │   └── quiz.tsx
+│   └── modal.tsx
+├── components/
+│   ├── RockCard.tsx
+│   ├── FilterPanel.tsx
+│   ├── SearchBar.tsx
+│   ├── RockDetail.tsx
+│   └── CollectionManager.tsx
+├── data/
+│   ├── rocks.json
+│   └── quiz.json
+├── shared/
+│   └── hooks, utils, types
+└── README.md
 ```
+---
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 📚 Data Sources
 
-## Learn more
+- [USGS Rock Identification Basics](https://www.usgs.gov/special-topic/education/rock-identification)
+- [Geology.com Rock Gallery](https://geology.com/rocks/)
+- [Mindat.org](https://www.mindat.org/)
+- [Minerals Education Coalition](https://mineralseducationcoalition.org/minerals-database/)
+- [Rock Scanner](https://www.rockscanner.com/rocks)
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 🛠️ Installation & Setup
+```bash
+git clone https://github.com/Do0ky/RockAppMobile.git
+cd RockAppMobile
+npm install
+npx expo start
+```
+---
 
-## Join the community
+## 💡 Potential Future Enhancements
+- 📚 Learn Page (glossary terms and visual guides)
+- 📊 API integration for dynamic data
+- 📸 Image upload for rock identification
+- 🗺️ Map integration to show rock locations
+- 🧭 AR or camera-based recognition
+- 🧑‍🤝‍🧑 Community submissions and sharing
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 👨‍💻 Authors
+Co-created by:
+- **Claire Peyre**  
+- **Aaron Escobar**  
