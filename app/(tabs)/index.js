@@ -1,6 +1,7 @@
-import { View, Text, StyleSheet, TouchableOpacity, ImageBackground, Platform } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
+import { BlurView } from 'expo-blur';
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -12,16 +13,17 @@ export default function HomeScreen() {
       resizeMode='cover'
     >
       <SafeAreaView style={styles.container}>
-        <Text style={styles.header}>RockApp Mobile</Text>
+
+        <Text style={styles.header}>ROCKAPP MOBILE</Text>
 
         <View style={styles.entryOptions}>
-          <TouchableOpacity style={styles.entryCard} onPress={() => router.push('/gallery')}>
+          <BlurView intensity={20} style={styles.entryCard} onPress={() => router.push('/gallery')}>
             <Text style={styles.entryText}>Enter Rock Gallery</Text>
-          </TouchableOpacity>
+          </BlurView>
 
-          <TouchableOpacity style={styles.entryCard} onPress={() => router.push('/quiz')}>
+          <BlurView intensity={20} style={styles.entryCard} onPress={() => router.push('/quiz')}>
             <Text style={styles.entryText}>Start Quiz Mode</Text>
-          </TouchableOpacity>
+          </BlurView>
         </View>
 
       </SafeAreaView>
@@ -38,13 +40,14 @@ const styles = StyleSheet.create({
     padding: 24,
   },
   header: {
+    fontFamily: 'Rationale',
     backgroundColor: '#dbe4eab7',
     height: '10%',
     width: '100%',
     padding: 10,
     marginTop: Platform.OS === 'ios' ? 40 : 20,
-    fontSize: 28,
-    fontWeight: 'bold',
+    fontSize: 46,
+    fontWeight: '600',
     marginBottom: 40,
     textAlign: 'center',
     justifyContent: 'center'
@@ -56,17 +59,30 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   entryCard: {
-    backgroundColor: '#6899979a',
+    backgroundColor: 'rgba(197, 191, 184, 0.664)',
+    borderColor: '#5c3b4b',
+    borderWidth: 2,
     paddingVertical: 20,
     paddingHorizontal: 30,
-    borderRadius: 12,
+    borderRadius: 16,
     alignItems: 'center',
+    justifyContent: 'center',
     elevation: 3,
-    height: 130
+    height: 250,
+    width: 250,
+    zIndex: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 5 // for Android
   },
   entryText: {
-    fontSize: 18,
+    fontFamily: 'UnicaOne',
+    color: '#4b313e',
+    fontSize: 27,
     fontWeight: '600',
+    textAlign: 'center',
   }, 
   background: {
   flex: 1,
