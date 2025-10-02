@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet, TouchableOpacity, ImageBackground, Platform } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 
 export default function HomeScreen() {
@@ -10,7 +11,7 @@ export default function HomeScreen() {
       style={styles.background}
       resizeMode='cover'
     >
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Text style={styles.header}>RockApp Mobile</Text>
 
         <View style={styles.entryOptions}>
@@ -23,7 +24,8 @@ export default function HomeScreen() {
           </TouchableOpacity>
         </View>
 
-      </View>
+      </SafeAreaView>
+
     </ImageBackground>
   );
 };
@@ -40,12 +42,12 @@ const styles = StyleSheet.create({
     height: '10%',
     width: '100%',
     padding: 10,
-    marginTop: Platform.OS === 'ios' ? 40 : 20, // optional: add top padding for iOS notch
+    marginTop: Platform.OS === 'ios' ? 40 : 20,
     fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 40,
     textAlign: 'center',
-    textAlignVertical: 'center'
+    justifyContent: 'center'
   },
   entryOptions: {
     marginTop: 40,
