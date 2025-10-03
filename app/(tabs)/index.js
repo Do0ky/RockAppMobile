@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ImageBackground, Platform } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, Platform, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { BlurView } from 'expo-blur';
@@ -14,7 +14,15 @@ export default function HomeScreen() {
     >
       <SafeAreaView style={styles.container}>
 
-        <Text style={styles.header}>ROCKAPP MOBILE</Text>
+        <View style={styles.header}>
+          <View style={styles.brandWrapper}>
+            <Image
+              source={require('@/assets/images/header-title.png')}
+              style={styles.headerTitle}
+              resizeMode="contain"
+            />
+          </View>
+        </View>
 
         <View style={styles.entryOptions}>
           <BlurView intensity={20} style={styles.entryCard} onPress={() => router.push('/gallery')}>
@@ -37,26 +45,34 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
-    padding: 24,
+    paddingTop: 24,
+    paddingBottom: 24
   },
   header: {
     fontFamily: 'Rationale',
-    backgroundColor: '#dbe4eab7',
-    height: '10%',
+    backgroundColor: '#dbe4ea9f',
     width: '100%',
-    padding: 10,
-    marginTop: Platform.OS === 'ios' ? 40 : 20,
-    fontSize: 46,
-    fontWeight: '600',
-    marginBottom: 40,
-    textAlign: 'center',
-    justifyContent: 'center'
+    height: Platform.OS === 'ios' ? 100 : 80, // adjust for status bar
+    paddingTop: Platform.OS === 'ios' ? 40 : 0,
+    marginTop: Platform.OS === 'ios' ? 40 : 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'stretch'
+  },
+  brandWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 16
+  },
+  headerTitle: {
+    maxHeight: 180, 
+    width: 240
   },
   entryOptions: {
-    marginTop: 40,
     gap: 20,
     width: '100%',
     alignItems: 'center',
+    marginTop: 75
   },
   entryCard: {
     backgroundColor: 'rgba(197, 191, 184, 0.664)',
