@@ -8,7 +8,7 @@ export default function HomeScreen() {
 
   return (
     <ImageBackground
-      source={require('@/assets/images/home-background.jpg')}
+      source={require('@/assets/images/home-background2.jpg')}
       style={styles.background}
       resizeMode='cover'
     >
