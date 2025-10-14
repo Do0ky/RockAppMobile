@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet, ImageBackground, Platform, Image } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { useRouter } from 'expo-router';
 import { BlurView } from 'expo-blur';
+import { useRouter } from 'expo-router';
+import { Image, ImageBackground, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -25,13 +25,17 @@ export default function HomeScreen() {
         </View>
 
         <View style={styles.entryOptions}>
-          <BlurView intensity={20} style={styles.entryCard} onPress={() => router.push('/gallery')}>
-            <Text style={styles.entryText}>Enter Rock Gallery</Text>
-          </BlurView>
+          <Pressable onPress={() => router.push('/gallery')}>
+            <BlurView intensity={20} style={styles.entryCard}>
+              <Text style={styles.entryText}>Enter Rock Gallery</Text>
+            </BlurView>
+          </Pressable>
 
-          <BlurView intensity={20} style={styles.entryCard} onPress={() => router.push('/quiz')}>
-            <Text style={styles.entryText}>Start Quiz Mode</Text>
-          </BlurView>
+          <Pressable onPress={() => router.push('/quiz')}>
+            <BlurView intensity={20} style={styles.entryCard}>
+              <Text style={styles.entryText}>Start Quiz Mode</Text>
+            </BlurView>
+          </Pressable>
         </View>
 
       </SafeAreaView>
