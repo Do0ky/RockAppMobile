@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "question": "What type of rock is formed from cooled magma or lava?",
+    "options": ["Igneous", "Sedimentary", "Metamorphic", "Fossil"],
+    "answer": 0
+  },
+  {
+    "id": 2,
+    "question": "Which rock type is formed by layers of sediment being compacted over time?",
+    "options": ["Granite", "Sedimentary", "Metamorphic", "Basalt"],
+    "answer": 1
+  },
+  {
+    "id": 3,
+    "question": "Marble is a metamorphic rock that forms from which parent rock?",
+    "options": ["Sandstone", "Limestone", "Shale", "Granite"],
+    "answer": 1
+  },
+  {
+    "id": 4,
+    "question": "What is the hardest mineral on the Mohs hardness scale?",
+    "options": ["Quartz", "Diamond", "Topaz", "Corundum"],
+    "answer": 1
+  },
+  {
+    "id": 5,
+    "question": "Which process describes the breaking down of rocks into smaller pieces by wind, water, or ice?",
+    "options": ["Erosion", "Deposition", "Lithification", "Metamorphism"],
+    "answer": 0
+  }
+]
