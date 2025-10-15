@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { Badge, Button, Card, Text } from '@rneui/themed';
+import { Button, Card, Text } from '@rneui/themed';
 import React, { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -41,6 +41,8 @@ export default function QuizScreen() {
 		setShowResult(false);
 	};
 
+	const progress = showResult ? 1 : current / quizData.length;
+
 	return (
 		<SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
 			<ScrollView 
@@ -58,6 +60,17 @@ export default function QuizScreen() {
 								buttonStyle={styles.backButton}
 								titleStyle={styles.buttonTitle}
 							/>
+						</View>
+					)}
+
+					{!showResult && (
+						<View style={styles.progressContainer}>
+							<View style={styles.progressTrack}>
+								<View style={[styles.progressBar, { width: `${progress * 100}%` }]} />
+							</View>
+							<Text style={styles.progressText}>
+								{Math.round(progress * 100)}% Complete
+							</Text>
 						</View>
 					)}
 
@@ -79,11 +92,11 @@ export default function QuizScreen() {
 					) : (
 						<Card containerStyle={styles.quizCard}>
 							<View style={styles.badgeContainer}>
-								<Badge
-									value={`Question ${current + 1} of ${quizData.length}`}
-									badgeStyle={styles.badge}
-									textStyle={styles.badgeText}
-								/>
+								<View style={styles.badge}>
+									<Text style={styles.badgeText}>
+										Question {current + 1} of {quizData.length}
+									</Text>
+								</View>
 							</View>
 							
 							<Text h3 style={styles.question}>{question.question}</Text>
@@ -233,6 +246,7 @@ const styles = StyleSheet.create({
 		shadowOpacity: 0.3,
 		shadowRadius: 8,
 		elevation: 8,
+		overflow: 'hidden',
 	},
 	badgeContainer: {
 		alignItems: 'flex-start',
@@ -281,7 +295,7 @@ const styles = StyleSheet.create({
 		elevation: 4,
 	},
 	optionText: {
-		fontSize: 16,
+		fontSize: 20,
 		color: '#4b313e',
 		textAlign: 'left',
 		fontWeight: '500',
@@ -302,5 +316,29 @@ const styles = StyleSheet.create({
 	disabledButton: {
 		backgroundColor: '#8c7a6e', // Muted version of the button
 		opacity: 0.6,
+	},
+	progressContainer: {
+		width: '100%',
+		maxWidth: 400,
+		marginBottom: 20,
+	},
+	progressTrack: {
+		height: 8,
+		backgroundColor: '#f3e4dc',
+		borderRadius: 4,
+		overflow: 'hidden',
+		marginBottom: 8,
+	},
+	progressBar: {
+		height: '100%',
+		backgroundColor: '#4d313d',
+		borderRadius: 4,
+	},
+	progressText: {
+		fontSize: 14,
+		color: '#4b313e',
+		fontFamily: 'Rationale',
+		textAlign: 'center',
+		fontWeight: 'bold',
 	},
 });
