@@ -5,7 +5,7 @@ import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import RockCard from '../components/RockCard';
 
-export default function RockCollection({ removeFromCollection, collection, goToGallery }) {
+export default function RockCollection({ removeFromCollection = () => {}, collection = [], goToGallery }) {
   
     /* SORT COLLECTION CARDS BY ALPHABETICAL ORDER */
     const sortedRockCollection = useMemo(() => {
