@@ -31,7 +31,7 @@ export default function HomeScreen() {
             </BlurView>
           </Pressable>
 
-          <Pressable onPress={() => router.push('/quiz')}>
+          <Pressable onPress={() => router.push('/QuizScreen')}>
             <BlurView intensity={20} style={styles.entryCard}>
               <Text style={styles.entryText}>Start Quiz Mode</Text>
             </BlurView>
