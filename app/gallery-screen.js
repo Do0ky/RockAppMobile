@@ -1,16 +1,18 @@
+import RockCard from '@/components/RockCard';
+import RockDetailModal from '@/components/RockDetailModal';
+import { rocks } from '@/data/rocks';
+import useCollectionManager from '@/utils/collectionManager';
+import { useNavigation } from '@react-navigation/native';
 import { Button } from '@rneui/themed';
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { rocks } from '@/data/rocks';
-import RockCard from '@/components/RockCard';
-import RockDetailModal from '@/components/RockDetailModal';
-import useCollectionManager from '@/utils/collectionManager';
 
 export default function GalleryScreen() {
 
   const router = useRouter();
+  const navigation = useNavigation();
 
   // Lifting state for modal management
   const [selectedRock, setSelectedRock] = useState(null);
@@ -47,7 +49,7 @@ export default function GalleryScreen() {
           />
           <Button
             title="Back to Home"
-            onPress={() => router.back()}
+            onPress={() => navigation.navigate('(tabs)')}
             buttonStyle={styles.backButton}
             titleStyle={styles.buttonTitle}
             containerStyle={styles.buttonContainer}

@@ -56,7 +56,7 @@ export default function QuizScreen() {
 						<View style={styles.buttonContainer}>
 							<Button
 								title="Back to Home"
-								onPress={() => navigation.goBack()}
+								onPress={() => navigation.navigate('(tabs)')}
 								buttonStyle={styles.backButton}
 								titleStyle={styles.buttonTitle}
 							/>
@@ -178,6 +178,9 @@ const styles = StyleSheet.create({
 		marginVertical: 15,
 		width: '100%',
 		maxWidth: 400,
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		gap: 10,
 	},
 	backButton: {
 		backgroundColor: '#4d313d', // collection-button background
