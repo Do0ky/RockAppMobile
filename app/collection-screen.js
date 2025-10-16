@@ -4,9 +4,16 @@ import React, { useMemo } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import RockCard from '../components/RockCard';
+import useCollectionManager from '@/utils/collectionManager';
 
-export default function RockCollection({ removeFromCollection = () => {}, collection = [], goToGallery }) {
+export default function CollectionScreen() {
   
+    // Using the custom hook to manage collection state and actions
+    const {
+        collection,
+        removeFromCollection,
+    } = useCollectionManager();
+
     /* SORT COLLECTION CARDS BY ALPHABETICAL ORDER */
     const sortedRockCollection = useMemo(() => {
         return [...collection].sort((a, b) => a.name.localeCompare(b.name));
