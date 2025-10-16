@@ -40,7 +40,7 @@ export default function GalleryScreen() {
         <View style={styles.buttonRow}>
           <Button
             title="Rock Collection"
-            onPress={() => router.push('/CollectionScreen')}
+            onPress={() => router.push('/collection-screen')}
             buttonStyle={styles.backButton}
             titleStyle={styles.buttonTitle}
             containerStyle={styles.buttonContainer}

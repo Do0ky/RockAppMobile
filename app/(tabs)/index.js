@@ -25,13 +25,13 @@ export default function HomeScreen() {
         </View>
 
         <View style={styles.entryOptions}>
-          <Pressable onPress={() => router.push('/GalleryScreen')}>
+          <Pressable onPress={() => router.push('/gallery-screen')}>
             <BlurView intensity={20} style={styles.entryCard}>
               <Text style={styles.entryText}>Enter Rock Gallery</Text>
             </BlurView>
           </Pressable>
 
-          <Pressable onPress={() => router.push('/QuizScreen')}>
+          <Pressable onPress={() => router.push('/quiz-screen')}>
             <BlurView intensity={20} style={styles.entryCard}>
               <Text style={styles.entryText}>Start Quiz Mode</Text>
             </BlurView>
