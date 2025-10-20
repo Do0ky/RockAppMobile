@@ -1,10 +1,11 @@
+import useCollectionManager from '@/utils/collectionManager';
+import { useNavigation } from '@react-navigation/native';
 import { Button } from '@rneui/themed';
 import { useRouter } from 'expo-router';
 import React, { useMemo } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import RockCard from '../components/RockCard';
-import useCollectionManager from '@/utils/collectionManager';
 
 export default function CollectionScreen() {
   
@@ -20,6 +21,7 @@ export default function CollectionScreen() {
     }, [collection]);
 
     const router = useRouter();
+    const navigation = useNavigation();
 
     const renderRockCard = ({ item: rock }) => (
         <RockCard 
@@ -37,7 +39,14 @@ export default function CollectionScreen() {
                 <View style={styles.buttonContainer}>
                     <Button
                         title="Back to Gallery"
-                        onPress={() => router.back()}
+                        onPress={() => router.push('/gallery-screen')}
+                        buttonStyle={styles.backButton}
+                        titleStyle={styles.buttonTitle}
+                        containerStyle={styles.backButtonContainer}
+                    />
+                    <Button
+                        title="Back to Home"
+                        onPress={() => navigation.navigate('(tabs)')}
                         buttonStyle={styles.backButton}
                         titleStyle={styles.buttonTitle}
                         containerStyle={styles.backButtonContainer}
@@ -81,8 +90,11 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         width: '100%',
-        maxWidth: 300,
+        maxWidth: 400,
         marginVertical: 12, // .text-center.my-3 equivalent
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        gap: 10,
     },
     backButton: {
         backgroundColor: '#524848', // .rock-collection .collection-button background
@@ -97,7 +109,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Rationale',
     },
     backButtonContainer: {
-        marginTop: 10,
+        flex: 1,
     },
     collectionContainer: {
         flex: 1,
