@@ -48,9 +48,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    alignItems: 'center',
-    paddingTop: 24,
-    paddingBottom: 24
+    
+    paddingTop: 10,
+    paddingBottom: 10
   },
   header: {
     fontFamily: 'Rationale',

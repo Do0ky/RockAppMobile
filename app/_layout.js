@@ -1,7 +1,10 @@
+//DRAWER LAYOUT 
 import { useFonts } from 'expo-font';
 import { Drawer } from 'expo-router/drawer';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export default function RootLayout() {
+export default function Layout() {
+
   const [fontsLoaded] = useFonts({
     Rationale: require('@/assets/fonts/Rationale-Regular.ttf'),
     UnicaOne: require('@/assets/fonts/UnicaOne-Regular.ttf'),
@@ -34,32 +37,34 @@ export default function RootLayout() {
       }}
     >
       <Drawer.Screen 
-        name="(tabs)" 
+        name="index" 
         options={{ 
           title: 'Home',
           drawerLabel: 'Home',
           headerShown: false,
+          drawerIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="home-circle" color={color} size={size} />
+          )
         }} 
+      />
+      <Drawer.Screen
+        name="gallery-screen"
+        options={{
+          title: '',
+          drawerLabel: 'Gallery',
+          drawerIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="image-album" color={color} size={size} />
+          ),
+        }}
       />
       <Drawer.Screen 
         name="quiz-screen" 
         options={{ 
-          title: 'Rock Quiz',
+          title: '',
           drawerLabel: 'Quiz',
-        }} 
-      />
-      <Drawer.Screen 
-        name="gallery-screen" 
-        options={{ 
-          title: 'Rock Gallery',
-          drawerLabel: 'Gallery',
-        }} 
-      />
-      <Drawer.Screen 
-        name="collection-screen" 
-        options={{ 
-          title: 'Rock Collection',
-          drawerLabel: 'Collection',
+          drawerIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="gamepad-variant" color={color} size={size} />
+          )
         }} 
       />
     </Drawer>

@@ -6,8 +6,11 @@ import { useNavigation } from '@react-navigation/native';
 import { Button } from '@rneui/themed';
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { rocks } from '@/data/rocks';
+import RockCard from '@/components/RockCard';
+import RockDetailModal from '@/components/RockDetailModal';
+import useCollectionManager from '@/utils/collectionManager';
 
 export default function GalleryScreen() {
 
@@ -34,11 +37,12 @@ export default function GalleryScreen() {
   } = useCollectionManager();
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.content}>
 
         <Text style={styles.title}>Rock Gallery</Text>
 
+<<<<<<< HEAD:app/gallery-screen.js
         <View style={styles.buttonRow}>
           <Button
             title="Rock Collection"
@@ -56,6 +60,8 @@ export default function GalleryScreen() {
           />
         </View>
 
+=======
+>>>>>>> 8a7fd82 (drawer and tabs adjustments):app/gallery-screen/gallery.js
         <FlatList
           data={rocks}
           key={'2-columns'} //static key to avoid render error
@@ -84,7 +90,7 @@ export default function GalleryScreen() {
       )}
 
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -92,7 +98,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ae988b',
-    paddingVertical: 32,
     paddingHorizontal: 20
   },
   content: {
@@ -114,27 +119,6 @@ const styles = StyleSheet.create({
     color: '#4b313e',
     fontFamily: 'Rationale',
     marginBottom: 32,
-    textAlign: 'center'
-  },
-  buttonRow: {
-  flexDirection: 'row',
-  justifyContent: 'center',
-  marginVertical: 12,
-  },
-  buttonContainer: {
-    marginHorizontal: 8,
-    flex: 1, // optional: makes buttons evenly spaced
-  },
-  backButton: {
-    backgroundColor: '#4d313d',
-    paddingVertical: 12,
-    borderRadius: 6
-  },
-  buttonTitle: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#f3e4dc',
-    fontFamily: 'Rationale',
     textAlign: 'center'
   },
   list: {

@@ -1,8 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
-import { Button, Card, Text } from '@rneui/themed';
+import { Button, Card } from '@rneui/themed';
 import React, { useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Pressable, ScrollView, StyleSheet, View, Text } from 'react-native';
 import quizData from '../data/quiz.json';
 
 export default function QuizScreen() {
@@ -44,13 +43,13 @@ export default function QuizScreen() {
 	const progress = showResult ? 1 : current / quizData.length;
 
 	return (
-		<SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
+		<View style={styles.container} >
 			<ScrollView 
 				contentContainerStyle={styles.scrollContent}
 				showsVerticalScrollIndicator={false}
 			>
 				<View style={styles.quizContainer}>
-					<Text h1 style={styles.title}>Rock Quiz</Text>
+					<Text style={styles.title}>Rock Quiz</Text>
 					
 					{navigation && (
 						<View style={styles.buttonContainer}>
@@ -137,7 +136,7 @@ export default function QuizScreen() {
 					)}
 				</View>
 			</ScrollView>
-		</SafeAreaView>
+		</View>
 	);
 }
 
@@ -153,7 +152,8 @@ function useOptionalNavigation() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#ae988b', // Rock gallery background color
+		backgroundColor: '#ae988b',
+		paddingTop: 1
 	},
 	scrollContent: {
 		flexGrow: 1,
@@ -167,12 +167,11 @@ const styles = StyleSheet.create({
 		paddingHorizontal: 20,
 	},
 	title: {
-		color: '#3d2630', // Dark heading color from rock-gallery
-		marginBottom: 20,
-		textAlign: 'center',
-		fontSize: 48,
-		fontWeight: '900',
-		fontFamily: 'UnicaOne', // Unica One font
+		fontSize: 55,
+		color: '#3d2630',
+		fontFamily: 'UnicaOne',
+		marginBottom: 10,
+		textAlign: 'center'
 	},
 	buttonContainer: {
 		marginVertical: 15,

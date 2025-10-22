@@ -5,7 +5,8 @@ import { useRouter } from 'expo-router';
 import React, { useMemo } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import RockCard from '../components/RockCard';
+import RockCard from '@/components/RockCard';
+import useCollectionManager from '@/utils/collectionManager';
 
 export default function CollectionScreen() {
   
