@@ -3,14 +3,9 @@ import RockDetailModal from '@/components/RockDetailModal';
 import { rocks } from '@/data/rocks';
 import useCollectionManager from '@/utils/collectionManager';
 import { useNavigation } from '@react-navigation/native';
-import { Button } from '@rneui/themed';
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
-import { rocks } from '@/data/rocks';
-import RockCard from '@/components/RockCard';
-import RockDetailModal from '@/components/RockDetailModal';
-import useCollectionManager from '@/utils/collectionManager';
 
 export default function GalleryScreen() {
 
@@ -42,26 +37,6 @@ export default function GalleryScreen() {
 
         <Text style={styles.title}>Rock Gallery</Text>
 
-<<<<<<< HEAD:app/gallery-screen.js
-        <View style={styles.buttonRow}>
-          <Button
-            title="Rock Collection"
-            onPress={() => router.push('/collection-screen')}
-            buttonStyle={styles.backButton}
-            titleStyle={styles.buttonTitle}
-            containerStyle={styles.buttonContainer}
-          />
-          <Button
-            title="Back to Home"
-            onPress={() => navigation.navigate('(tabs)')}
-            buttonStyle={styles.backButton}
-            titleStyle={styles.buttonTitle}
-            containerStyle={styles.buttonContainer}
-          />
-        </View>
-
-=======
->>>>>>> 8a7fd82 (drawer and tabs adjustments):app/gallery-screen/gallery.js
         <FlatList
           data={rocks}
           key={'2-columns'} //static key to avoid render error
