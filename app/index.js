@@ -48,13 +48,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    
     paddingTop: 10,
     paddingBottom: 10
   },
   header: {
     fontFamily: 'Rationale',
-    backgroundColor: '#dbe4ea9f',
+    backgroundColor: 'rgba(197, 191, 184, 0.74)',
     width: '100%',
     height: Platform.OS === 'ios' ? 100 : 80, // adjust for status bar
     paddingTop: Platform.OS === 'ios' ? 40 : 0,
@@ -73,10 +72,10 @@ const styles = StyleSheet.create({
     width: 240
   },
   entryOptions: {
-    gap: 20,
+    gap: 35,
     width: '100%',
     alignItems: 'center',
-    marginTop: 75
+    marginTop: 98
   },
   entryCard: {
     backgroundColor: 'rgba(197, 191, 184, 0.664)',
