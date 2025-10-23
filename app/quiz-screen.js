@@ -50,17 +50,6 @@ export default function QuizScreen() {
 			>
 				<View style={styles.quizContainer}>
 					<Text style={styles.title}>Rock Quiz</Text>
-					
-					{navigation && (
-						<View style={styles.buttonContainer}>
-							<Button
-								title="Back to Home"
-								onPress={() => navigation.navigate('(tabs)')}
-								buttonStyle={styles.backButton}
-								titleStyle={styles.buttonTitle}
-							/>
-						</View>
-					)}
 
 					{!showResult && (
 						<View style={styles.progressContainer}>
@@ -153,12 +142,11 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: '#ae988b',
-		paddingTop: 1
 	},
 	scrollContent: {
 		flexGrow: 1,
 		justifyContent: 'center',
-		paddingVertical: 20,
+		paddingVertical: 1,
 	},
 	quizContainer: {
 		flex: 1,
@@ -261,17 +249,15 @@ const styles = StyleSheet.create({
 		borderRadius: 6,
 	},
 	badgeText: {
-		fontSize: 14,
+		fontSize: 15,
 		color: '#f3e4dc',
-		fontWeight: 'bold',
-		fontFamily: 'Rationale',
+		fontFamily: 'UnicaOne',
 	},
 	question: {
 		fontSize: 22,
-		fontWeight: '900',
 		marginBottom: 20,
 		color: '#4b313e',
-		fontFamily: 'UnicaOne',
+		fontFamily: 'Rationale',
 	},
 	optionsContainer: {
 		width: '100%',
@@ -287,7 +273,8 @@ const styles = StyleSheet.create({
 		marginBottom: 10,
 	},
 	selectedOption: {
-		backgroundColor: '#ffd3ee', // quiz-answer-btn.selected-answer
+		fontFamily: 'Rationale',
+		backgroundColor: '#e2a785c5', // quiz-answer-btn.selected-answer
 		borderColor: '#5c3b4b',
 		borderWidth: 2,
 		shadowColor: '#ae988b',
@@ -304,16 +291,20 @@ const styles = StyleSheet.create({
 		fontFamily: 'Rationale',
 	},
 	selectedOptionText: {
-		color: '#4b313e', // Selected answer color
-		fontWeight: 'bold',
+		color: '#4b313e',
+		fontFamily: 'UnicaOne',
 	},
 	nextButtonContainer: {
 		marginTop: 20,
 	},
 	nextButton: {
-		backgroundColor: '#4d313d', // collection-button
+		backgroundColor: '#4d313d',
 		paddingVertical: 12,
-		borderRadius: 3,
+		borderRadius: 3
+	},
+	buttonTitle: {
+		fontFamily: 'UnicaOne',
+		fontSize: 20
 	},
 	disabledButton: {
 		backgroundColor: '#8c7a6e', // Muted version of the button
